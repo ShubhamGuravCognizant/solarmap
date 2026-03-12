@@ -375,6 +375,19 @@ function decorateTemplateAndTheme() {
   if (theme) addClasses(document.body, theme);
 }
 
+// Set Class names for every cards parent
+// function addClassNameToCrads() {
+//   const addClasses = (element, classes) => {
+//     classes.split(',').forEach((c) => {
+//       element.classList.add(toClassName(c.trim()));
+//     });
+//   };
+//   const cards = getMetadata('cards');
+//   if (cards) addClasses(document.body, cards);
+//   const theme = getMetadata('cards');
+//   if (cards) addClasses(document.body, cards);
+// }
+
 /**
  * Wrap inline text content of block cells within a <p> tag.
  * @param {Element} block the block element
