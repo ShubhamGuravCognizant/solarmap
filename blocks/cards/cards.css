@@ -3,18 +3,17 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
 .cards > ul > li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #dadada;
   background-color: var(--background-color);
 }
-
-/* .cards .cards-card-body {
-  margin: 16px;
-} */
 
 .cards .cards-card-image {
   line-height: 0;
@@ -44,8 +43,8 @@
 .cards .cards-card {
   position: relative;
   overflow: hidden;
-  border-radius: 6px;              /* optional */
-  background: #000;                /* fallback while image loads */
+  border-radius: 6px;   
+  background: #000;   
 }
 
 /* Image sizing */
@@ -54,19 +53,12 @@
 .cards .cards-card-image {
   display: block;
   width: 100%;
-  height: 260px;                   /* adjust to your need */
+  min-height: 260px;    
+  max-height: 320px;               /* adjust to your need */
   object-fit: cover;               /* ensures consistent crop */
 }
 
 /* --- The overlay text block --- */
-/* top: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.55);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; 
-  gap: 10px;
-  padding: 20px; */
 
 .cards .cards-card-body {
   position: absolute;
@@ -146,34 +138,25 @@
 }
 
 
-
-
-/* --- CTA button (hidden by default) --- */
-
-
 /* --- Hover behavior --- */
-.cards .cards-card-body:hover {
+.cards-container--2 .cards .cards-card-body:hover {
   opacity: 0;                      
   transform: translateY(6px);
   /* transition: opacity 200ms ease; */
 }
 
-
-.cards li:has(.cards-card-body:hover, .cards-card-image:hover, .cards-card-button:hover) .cards-card-body {
+.cards-container--2 .cards li:has(.cards-card-body:hover, .cards-card-image:hover, .cards-card-button:hover) .cards-card-body {
   opacity: 0;
 }
 
-.cards li:has(.cards-card-body:hover, .cards-card-image:hover, .cards-card-button:hover) .cards-card-button {
+.cards-container--2 .cards li:has(.cards-card-body:hover, .cards-card-image:hover, .cards-card-button:hover) .cards-card-button {
   opacity: 1;
   pointer-events: auto; /* allow clicks when shown */
 }
 
 
-
-
-
 /* Center the button container */
-.cards li .cards-card-button {
+.cards-container--2 .cards li .cards-card-button {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -196,3 +179,44 @@
 }
 
 
+.cards-container--1 .cards li .cards-card-button {
+  
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;                     /* sits on the bottom edge of the image */
+  z-index: 3;                    /* above image/text/overlay layers */
+
+  /* Visuals */
+  background: #0b5ed7;
+  color: #fff;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  display: flex;                 /* supports optional icon+text layout */
+  align-items: center;
+  gap: 10px;                     /* room for an icon if needed */
+  text-align: left;
+  text-decoration: none;
+}
+
+.cards-container--1 .cards-card-body {
+  opacity: 0;
+}
+
+/* --- Hover behavior --- */
+.cards-container--1 .cards .cards-card-body:hover {
+  opacity: 1;                      
+  /* transform: translateY(6px); */
+  transition: opacity 200ms ease;
+}
+
+.cards-container--1 .cards li:has(.cards-card-body:hover, .cards-card-image:hover, .cards-card-button:hover) .cards-card-body {
+  opacity: 1;
+}
+
+.cards-container--1 .cards li:has(.cards-card-body:hover, .cards-card-image:hover, .cards-card-button:hover) .cards-card-button {
+  opacity: 0;
+  pointer-events: auto; /* allow clicks when shown */
+}
