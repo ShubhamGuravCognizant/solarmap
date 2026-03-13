@@ -44,3 +44,16 @@
     justify-content: space-evenly;
     padding: 50px 0;
 }
+
+a.button.primary, button.button.primary {
+  border-radius: 10px;
+  background-color: #0659D4;
+  border: none;
+}
+
+table {
+  width: 100%;
+}
+table tbody tr td:nth-of-type(2) {
+  justify-items: anchor-center;
+}

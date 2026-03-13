@@ -1,4 +1,3 @@
-import { fetchPlaceholders } from '../../scripts/placeholders.js';
  
 export default async function decorate(block) {
   console.log("countryslider block", block);

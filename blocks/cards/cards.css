@@ -190,7 +190,7 @@
   /* Visuals */
   background: #0b5ed7;
   color: #fff;
-  padding: 12px 16px;
+  padding: 15px 20px;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.2;
@@ -219,6 +219,12 @@
 .cards-container--1 .cards li:has(.cards-card-body:hover, .cards-card-image:hover, .cards-card-button:hover) .cards-card-button {
   opacity: 0;
   pointer-events: auto; /* allow clicks when shown */
+}
+
+
+
+.cards-container--1 .cards li .cards-card-button h4 {
+  margin: 0;
 }
 
 
