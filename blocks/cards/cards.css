@@ -220,3 +220,31 @@
   opacity: 0;
   pointer-events: auto; /* allow clicks when shown */
 }
+
+
+
+
+.expertteamcards-container .expertteamcards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.expertteamcards {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 24px;
+  justify-content: center
+}
+
+
+.expertteamcards-container .expertteamcards.block > div picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}
+
+.expertteamcards-container .expertteamcards > div picture { 
+  aspect-ratio: 3 / 4; 
+}
